@@ -1,0 +1,28 @@
+<div class="row mt-2 mb-2">
+    <div class="col-12">
+      <nav aria-label="...">
+        <ul class="pagination">
+          <li class="page-item "
+          [ngClass]="{'disabled': !previousURL}"
+          
+          >
+            <a class="page-link"
+            (click)="loadPersonajes(previousURL!)"
+            
+            >Previous</a>
+          </li>
+          <li class="page-item"
+
+          [ngClass]="{'disabled': !nextURL}"
+          
+          
+          >
+            <a class="page-link" 
+            
+            (click)="loadPersonajes(nextURL!)"
+            >Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
