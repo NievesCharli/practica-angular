@@ -1,4 +1,4 @@
-import { isPlatformBrowser, NgFor, NgIf, TitleCasePipe } from "@angular/common";
+import { isPlatformBrowser, NgFor, NgIf, NgStyle, TitleCasePipe } from "@angular/common";
 import { Component, ElementRef, Inject, Input, PLATFORM_ID, ViewChild } from "@angular/core";
 import { Pokemon } from "../interfaces/pokemons";
 
@@ -8,7 +8,7 @@ import { Pokemon } from "../interfaces/pokemons";
 
     selector: 'pokemon-modal',
     standalone: true,
-    imports: [NgFor,TitleCasePipe,NgIf],
+    imports: [NgFor,TitleCasePipe,NgIf,NgStyle],
     templateUrl: './modal.component.html',
     styles:``
 })
@@ -71,5 +71,28 @@ export class ModalComponent{
 
         this.bootstrapModal.hide();
     }
+
+    getColorForType(): string {
+        const typeColors: { [key: string]: string } = {
+          fire: '#FDDFDF',
+          grass: '#DEFDE0',
+          electric: '#FCF7DE',
+          water: '#DEF3FD',
+          ground: '#f4e7da',
+          rock: '#d5d5d4',
+          fairy: '#fceaff',
+          poison: '#98d7a5',
+          bug: '#f8d5a3',
+          dragon: '#97b3e6',
+          psychic: '#eaeda1',
+          flying: '#F5F5F5',
+          fighting: '#E6E0D4',
+          normal: '#F5F5F5',
+        };
+        const typeName = this.pokemon.types?.[0]?.type?.name;
+        if (!typeName) return 'white';
+        return typeColors[typeName] || 'white';
+    }
+    
 
 }

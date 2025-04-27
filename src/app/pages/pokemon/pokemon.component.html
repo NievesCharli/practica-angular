@@ -1,4 +1,11 @@
 <div class="row">
+    <div class="col-12">
+        <h1 class="text-center display-1 text-danger">Poke<span class="text-warning">dex</span></h1>
+    </div>
+</div>
+
+
+<div class="row">
     <pokemon-search (eventSearch)="searchPokemon($event)"/>
 </div>
 <pokemon-paginacion (eventNewPokemons)="setNewPokemon($event)"/>
