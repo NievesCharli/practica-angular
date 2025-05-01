@@ -26,3 +26,16 @@
     align-items: center;
     text-align: center;
 }
+
+@font-face {
+    font-family: 'Saiyan-Sans';
+    src: url('./fuentes/Saiyan-Sans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Esto asegura que la fuente se cargue correctamente */
+}
+
+h1{
+    font-family: 'Saiyan-Sans', cursive !important; 
+  }
+  

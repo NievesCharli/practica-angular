@@ -1,14 +1,14 @@
-import { Component, Input, input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import { Pokemon, Pokemons } from '../interfaces/pokemons';
-import { NgFor, NgIf, NgStyle } from '@angular/common';
+import { NgClass, NgFor, NgIf} from '@angular/common';
 import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'pokemon-card',
   standalone: true,
-  imports: [NgIf, NgFor,ModalComponent,NgStyle],
+  imports: [NgIf, NgFor,ModalComponent,NgClass],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.css'
+  styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnChanges {
 
@@ -24,7 +24,7 @@ export class CardComponent implements OnChanges {
    
     }
   }
-
+  
   openModal(pokemon:Pokemon): void {
 
     if(this.modal){
@@ -32,6 +32,8 @@ export class CardComponent implements OnChanges {
       this.modal.open(pokemon);
     }
   }
+
+  
 
   getColorForType(type: string | undefined): string {
     const typeColors: {[key: string]: string} = {

@@ -1,9 +1,9 @@
 <div class="row mb-3 g-3">
-  <ng-container *ngIf="personajesAll && personajesAll.items && personajesAll.items.length >0" ; else noPersonajes>
+  <ng-container *ngIf="personajesAll && personajesAll.items && personajesAll.items.length > 0; else noPersonajes">
     <div class="col-3" *ngFor="let personaje of personajesAll.items">
-      <div class="card fixed-card">
+      <div class="card fixed-card dbz-card h-100" [ngClass]="getRaceClass(personaje.data?.race)">
         
-        <div  *ngIf="!imageLoaded">
+        <div *ngIf="!imageLoaded">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="200" height="200" style="shape-rendering: auto; display: block; background: rgb(255, 255, 255);" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g transform="translate(50 50)">
             <g transform="scale(0.8)">
               <g transform="translate(-50 -50)">
@@ -15,34 +15,33 @@
               </g>
             </g>
           </g><g></g></g></svg>
-
         </div>
 
         <img 
-
-
-        [src]="personaje?.image" 
-        class="card-img-top fixed-img" alt="..."
-        loading="lazy"
-        (load)="imageLoaded = true"
-        
+          [src]="personaje?.image" 
+          class="card-img-top fixed-img" 
+          alt="{{ personaje.name }}"
+          loading="lazy"
+          (load)="imageLoaded = true"
         >
         
         <div class="card-body fixed-body">
-          <h5 class="card-title">{{personaje.name}}</h5>
-          <p class="card-text">{{personaje.race}}, {{personaje.gender}}</p>
-          <p class="card-text">Base Ki: {{personaje.ki}} </p>
-          <p class="card-text">Total Ki: {{personaje.maxKi}}</p>
-          <a [href]="personajesAll.links" class="btn btn-primary">Más información</a>
+          <h5 class="card-text">{{ personaje.name }}</h5>
+          <p class="card-text">Base Ki: {{ personaje.ki }}</p>
+          <li class="btn btn-outline-primary" (click)="openModal(personaje.data!)">Más información</li>
         </div>
+
       </div>
     </div>
   </ng-container>
+
   <ng-template #noPersonajes>
-    <div class="col 12">
+    <div class="col-12">
       <div class="alert alert-warning" role="alert">
-        no personajes found
+        No se encontraron personajes
       </div>
     </div>
   </ng-template>
 </div>
+
+<dbz-modal />

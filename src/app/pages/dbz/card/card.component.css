@@ -1,28 +1,66 @@
-.fixed-card{
-
+.fixed-card {
     width: 100%;
-    height: 350px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-}
-
-.fixed-img{
-
+  }
+  
+  .fixed-img {
     width: auto;
     height: 100px;
     max-width: 80%;
     object-fit: contain;
-}
-
-.fixed-body{
-
+  }
+  
+  .fixed-body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-}
+  }
+  
+  /* Colores de fondo por raza */
+  .saiyan {
+    background: linear-gradient(135deg, #ff4e50, #f9d423);
+    color: black;
+  }
+  .namekian {
+    background: linear-gradient(135deg, #04c66e, #078550);
+    color: black;
+  }
+  .human {
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    color: black;
+  }
+  .unknown {
+    background: linear-gradient(135deg, #bdc3c7, #2c3e50);
+    color: black;
+  }
+  
+  /* Efectos hover por raza */
+  .saiyan:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 6px rgba(255, 165, 0, 0.6); /* Naranja */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .namekian:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 6px rgba(0, 255, 100, 0.6); /* Verde neón */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .human:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 6px rgba(100, 149, 237, 0.6); /* Azul claro */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .unknown:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 6px rgba(128, 128, 128, 0.6); /* Gris */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  

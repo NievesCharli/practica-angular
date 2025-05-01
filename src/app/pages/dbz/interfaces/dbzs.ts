@@ -2,6 +2,7 @@ export interface Personajes {
     items: Item[];
     meta:  Meta;
     links: Links;
+  
 }
 
 export interface Item {
@@ -10,10 +11,10 @@ export interface Item {
     ki:          string;
     maxKi:       string;
     race:        string;
-    gender:      Gender;
+    gender:      string;
     description: string;
     image:       string;
-    affiliation: Affiliation;
+    affiliation: string;
     deletedAt:   null;
     data?: Personaje;
 }

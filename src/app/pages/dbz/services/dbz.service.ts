@@ -8,7 +8,7 @@ import { Personaje, Personajes } from '../interfaces/dbzs';
 })
 export class DbzService {
 
-  private apiURLBase: string = 'https://dragonball-api.com/api/characters/';
+  public apiURLBase: string = 'https://dragonball-api.com/api/characters/';
   private next:string | null = null;
   private previous:string | null = null;
 
@@ -27,6 +27,8 @@ export class DbzService {
 
     return this.http.get<Personaje>(`${this.apiURLBase}${termino}`);
   }
+ 
+  
 
 
   set nextURL(url:string | null){

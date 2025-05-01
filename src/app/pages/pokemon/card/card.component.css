@@ -35,3 +35,134 @@
     align-items: center;
     text-align: center;
 }
+
+.fixed-card {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 9px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .fixed-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Efecto de brillo según el tipo */
+  .fire:hover {
+    box-shadow: 0 0 15px 4px #f08030;
+  }
+  
+  .water:hover {
+    box-shadow: 0 0 15px 4px #6890f0;
+  }
+  
+  .grass:hover {
+    box-shadow: 0 0 15px 4px #78c850;
+  }
+  
+  .electric:hover {
+    box-shadow: 0 0 15px 4px #f8d030;
+  }
+  
+  .psychic:hover {
+    box-shadow: 0 0 15px 4px #f85888;
+  }
+  
+  .rock:hover {
+    box-shadow: 0 0 15px 4px #b8a038;
+  }
+  
+  .poison:hover {
+    box-shadow: 0 0 15px 4px #a040a0;
+  }
+  
+  .bug:hover {
+    box-shadow: 0 0 15px 4px #a8b820;
+  }
+  
+  .flying:hover {
+    box-shadow: 0 0 15px 4px #a890f0;
+  }
+  
+  .dragon:hover {
+    box-shadow: 0 0 15px 4px #7038f8;
+  }
+  
+  .fairy:hover {
+    box-shadow: 0 0 15px 4px #ee99ac;
+  }
+  
+  .fighting:hover {
+    box-shadow: 0 0 15px 4px #c03028;
+  }
+  
+  .normal:hover {
+    box-shadow: 0 0 15px 4px #a8a878;
+  }
+  
+  .unknown:hover {
+    box-shadow: 0 0 15px 4px #888;
+  }
+  
+  /* Estilo por defecto si no hay un tipo asignado */
+  .fire {
+    background-color: #fddfdf;
+  }
+  
+  .water {
+    background-color: #def3fd;
+  }
+  
+  .grass {
+    background-color: #defde0;
+  }
+  
+  .electric {
+    background-color: #fcf7de;
+  }
+  
+  .psychic {
+    background-color: #eaeda1;
+  }
+  
+  .rock {
+    background-color: #f4e7da;
+  }
+  
+  .poison {
+    background-color: #98d7a5;
+  }
+  
+  .bug {
+    background-color: #f8d5a3;
+  }
+  
+  .flying {
+    background-color: #f5f5f5;
+  }
+  
+  .dragon {
+    background-color: #97b3e6;
+  }
+  
+  .fairy {
+    background-color: #fceaff;
+  }
+  
+  .fighting {
+    background-color: #e6e0d4;
+  }
+  
+  .normal {
+    background-color: #f5f5f5;
+  }
+  
+  .unknown {
+    background-color: #e0e0e0; /* Color gris neutro si no tiene tipo */
+  }
+  

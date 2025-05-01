@@ -1,0 +1,49 @@
+<div class="modal fade" #modalElement tabindex="-1" aria-labelledby="dbzModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" [ngStyle]="{'background': getColorForRace(personaje.race)}"> <!-- Cambié background-color por background -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="dbzModalLabel">Detalles de {{ personaje.name | titlecase }}</h5>
+        <button type="button" class="btn-close" (click)="close()" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <!-- Columna de imagen y básicos -->
+          <div class="col-md-6 text-center">
+            <img [src]="personaje.image || '#'" [alt]="personaje.name" class="img-fluid mb-3 rounded" style="width: 200px; height: auto;" />
+            <p><strong>ID:</strong> {{ personaje.id}}</p>
+            <p><strong>Ki:</strong> {{ personaje.ki }}</p>
+            <p><strong>Ki Máximo:</strong> {{ personaje.maxKi }}</p>
+            <p><strong>Afiliación:</strong> {{ personaje.affiliation }}</p>
+            <p><strong>Género:</strong> {{ personaje.gender }}</p>
+            <p><strong>Raza:</strong> {{ personaje.race }}</p>
+          </div>
+
+          <!-- Columna de descripción, origen y transformaciones -->
+          <div class="col-md-6">
+            <h6>Descripción:</h6>
+            <p>{{ personaje.description }}</p>
+
+            <h6>Planeta de Origen:</h6>
+            <div *ngIf="personaje.originPlanet">
+              <p><strong>Nombre:</strong> {{ personaje.originPlanet.name }}</p>
+              <p><strong>¿Destruido?:</strong> {{ personaje.originPlanet.isDestroyed ? 'Sí' : 'No' }}</p>
+              <img [src]="personaje.originPlanet.image" alt="planeta" class="img-fluid rounded" style="width: 100px;" />
+              <p><small>{{ personaje.originPlanet.description }}</small></p>
+            </div>
+
+            <h6 *ngIf="personaje.transformations?.length">Transformaciones:</h6>
+            <ul *ngIf="personaje.transformations?.length" class="list-unstyled">
+              <li *ngFor="let t of personaje.transformations" class="mb-2">
+                <strong>{{ t.name }}</strong> – Ki: {{ t.ki }}<br />
+                <img [src]="t.image" alt="{{ t.name }}" class="img-thumbnail mt-1" style="width: 80px;" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="close()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

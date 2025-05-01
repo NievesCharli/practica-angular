@@ -3,12 +3,12 @@ import { CardComponent } from './card/card.component';
 import { Pokemons } from './interfaces/pokemons';
 import { PokemonService } from './services/pokemon.service';
 import { PaginacionComponent } from './paginacion/paginacion.component';
-import { SeacrhComponent } from './search/search.component';
+import { SearchComponent } from './search/search.component';
 
 @Component({
   selector: 'app-pokemon',
   standalone: true,
-  imports: [CardComponent, PaginacionComponent,SeacrhComponent],
+  imports: [CardComponent, PaginacionComponent,SearchComponent],
   templateUrl: './pokemon.component.html',
   styleUrl: './pokemon.component.css'
 })
