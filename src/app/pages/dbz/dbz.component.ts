@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CardComponent } from './card/card.component';
 import { Personajes, Item } from './interfaces/dbzs';
 import { DbzService } from './services/dbz.service';
@@ -11,6 +11,7 @@ import { SearchComponent } from './search/search.component';
   imports: [CardComponent, PaginacionComponent, SearchComponent],
   templateUrl: './dbz.component.html',
   styleUrl: './dbz.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
 export class DbzComponent implements OnInit {
   personajes: Personajes | undefined;

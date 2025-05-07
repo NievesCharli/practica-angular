@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CardComponent } from './card/card.component';
 import { Pokemons } from './interfaces/pokemons';
 import { PokemonService } from './services/pokemon.service';
@@ -10,7 +10,8 @@ import { SearchComponent } from './search/search.component';
   standalone: true,
   imports: [CardComponent, PaginacionComponent,SearchComponent],
   templateUrl: './pokemon.component.html',
-  styleUrl: './pokemon.component.css'
+  styleUrl: './pokemon.component.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class PokemonComponent implements OnInit {
 

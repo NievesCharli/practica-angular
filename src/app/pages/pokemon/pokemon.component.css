@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0033a0, #ffcc00); /* Azul y amarillo */
+  background-attachment: fixed;
+  background-size: 200% 200%;
+  animation: animatedBG 10s ease infinite; /* Animación de fondo */
+  color: #ffffff;
+}
+
+@keyframes animatedBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.navbar {
+  background-color: #002366 !important; /* Azul oscuro tipo Pokémon Azul */
+  border-bottom: 2px solid #ffcc00; /* Línea brillante amarilla tipo Pikachu */
+  animation: navbarBG 10s ease infinite; /* Animación de fondo en navbar */
+}
+
+@keyframes navbarBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.navbar a,
+.navbar-brand {
+  color: #ffcc00 !important; /* Texto amarillo (Pikachu) */
+  transition: color 0.3s ease; /* Efecto suave de transición */
+}
+
+.navbar a:hover {
+  color: #ffffff !important; /* Blanco al pasar el mouse */
+}
+
+.container {
+  text-align: center;
+  padding: 40px 20px;
+  animation: fadeIn 2s ease-in-out; /* Animación de aparición suave */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

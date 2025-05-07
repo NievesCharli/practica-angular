@@ -1,11 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent {
+  constructor(private router: Router) {}
 
+  goTo(route: string) {
+    // Añadimos un pequeño retraso para las transiciones suaves (opcional)
+    setTimeout(() => {
+      this.router.navigate([route]);
+    }, 300); // 300ms de retraso para dar una sensación de transición suave
+  }
 }
