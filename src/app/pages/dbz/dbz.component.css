@@ -1,9 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #ffcc33, #ff7043); /* Amarillo suave + Naranja coral */
-  background-attachment: fixed;
-  background-size: 200% 200%;
+  background: url('https://es.textstudio.com/output/background/0/0/6/1/1600_3b571.webp') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
   animation: animatedBG 10s ease infinite; /* Animación de fondo */
   color: #2d2d2d; /* Gris oscuro para contraste */
 }
@@ -21,11 +21,11 @@ body {
 }
 
 .navbar {
-  background: linear-gradient(90deg, #ffb300, #d84315); /* De amarillo miel a rojo-naranja */
-  background-size: 200% 200%;
-  animation: navbarBG 10s ease infinite; /* Animación de fondo en navbar */
-  border-bottom: 4px solid #ffeb3b; /* Borde amarillo claro */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+  background: linear-gradient(90deg, #f8bbd0, #ce93d8, #b3e5fc); /* De rosa claro a lila y celeste */
+  background-size: 300% 300%;
+  animation: navbarBG 12s ease infinite;
+  border-bottom: 4px solid #ffffff; /* Blanco suave para contraste */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Sombra más suave */
 }
 
 @keyframes navbarBG {
@@ -42,15 +42,16 @@ body {
 
 .navbar a,
 .navbar-brand {
-  color: #ffffff !important; /* Texto blanco puro */
+  color: #ffffff !important;
   transition: color 0.3s ease, text-shadow 0.3s ease;
   letter-spacing: 1px;
 }
 
 .navbar a:hover {
-  color: #ffeb3b !important; /* Amarillo claro */
-  text-shadow: 0 0 5px #ffeb3b; /* Resplandor suave */
+  color: #f48fb1 !important; /* Rosa suave */
+  text-shadow: 0 0 5px #f48fb1;
 }
+
 
 .container {
   text-align: center;

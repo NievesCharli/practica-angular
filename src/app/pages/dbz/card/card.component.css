@@ -1,66 +1,128 @@
 .fixed-card {
-    width: 100%;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  .fixed-img {
-    width: auto;
-    height: 100px;
-    max-width: 80%;
-    object-fit: contain;
-  }
-  
-  .fixed-body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-  }
-  
-  /* Colores de fondo por raza */
-  .saiyan {
-    background: linear-gradient(135deg, #ff4e50, #f9d423);
-    color: black;
-  }
-  .namekian {
-    background: linear-gradient(135deg, #04c66e, #078550);
-    color: black;
-  }
-  .human {
-    background: linear-gradient(135deg, #e0eafc, #cfdef3);
-    color: black;
-  }
-  .unknown {
-    background: linear-gradient(135deg, #bdc3c7, #2c3e50);
-    color: black;
-  }
-  
-  /* Efectos hover por raza */
-  .saiyan:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px 6px rgba(255, 165, 0, 0.6); /* Naranja */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .namekian:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px 6px rgba(0, 255, 100, 0.6); /* Verde neón */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .human:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px 6px rgba(100, 149, 237, 0.6); /* Azul claro */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .unknown:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px 6px rgba(128, 128, 128, 0.6); /* Gris */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
+  width: 100%;
+  height: 500px; /* Aumentado */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: visible;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fixed-img {
+  width: auto;
+  height: 200px; /* Aumentado */
+  max-width: 90%;
+  object-fit: contain;
+ 
+}
+
+.fixed-card:hover .fixed-img {
+  transform: scale(1.15); /* Aumenta tamaño con suavidad */
+}
+
+
+.fixed-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 12px;
+}
+
+
+/* ---------- FONDOS ANIMADOS POR RAZA ---------- */
+
+.saiyan {
+  background: linear-gradient(-45deg, #ff4e50, #f9d423, #ff4e50);
+  background-size: 400% 400%;
+  animation: animateSaiyan 6s ease infinite;
+  color: black;
+}
+
+.namekian {
+  background: linear-gradient(-45deg, #04c66e, #078550, #04c66e);
+  background-size: 400% 400%;
+  animation: animateNamekian 6s ease infinite;
+  color: black;
+}
+
+.human {
+  background: linear-gradient(-45deg, #e0eafc, #cfdef3, #e0eafc);
+  background-size: 400% 400%;
+  animation: animateHuman 6s ease infinite;
+  color: black;
+}
+
+.unknown {
+  background: linear-gradient(-45deg, #bdc3c7, #2c3e50, #bdc3c7);
+  background-size: 400% 400%;
+  animation: animateUnknown 6s ease infinite;
+  color: white;
+}
+
+/* ---------- EFECTOS HOVER ILUMINADOS POR RAZA ---------- */
+
+.saiyan:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 6px rgba(255, 165, 0, 0.6);
+}
+
+.namekian:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 6px rgba(0, 255, 100, 0.6);
+}
+
+.human:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 6px rgba(100, 149, 237, 0.6);
+}
+
+.unknown:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 6px rgba(128, 128, 128, 0.6);
+}
+
+/* ---------- ANIMACIONES ---------- */
+@keyframes animateSaiyan {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes animateNamekian {
+  0% { background-position: 100% 50%; }
+  50% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes animateHuman {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+@keyframes animateUnknown {
+  0% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 50% 0%; }
+}
+.custom-btn {
+  background: transparent;
+  border: 2px solid rgb(0, 0, 0);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.custom-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
