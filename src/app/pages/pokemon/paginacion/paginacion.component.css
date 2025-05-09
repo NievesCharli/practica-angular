@@ -1,3 +1,35 @@
-.page-item{
+.page-item {
     cursor: pointer;
+    margin: 0 5px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 0;
+}
+
+.page-link {
+    background: linear-gradient(135deg, #0033a0, #ffcc00); /* Azul marino y amarillo */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.page-link:hover {
+    background: linear-gradient(135deg, #3366cc, #ffee33); /* Tonos más claros al pasar el mouse */
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff;
+    transform: translateY(-2px);
+}
+
+.page-item.disabled .page-link {
+    background: #e0e0e0;
+    color: #9e9e9e;
+    box-shadow: none;
+    pointer-events: none;
 }

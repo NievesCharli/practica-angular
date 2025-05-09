@@ -1,168 +1,189 @@
-.fixed-card{
-
-    width: 100%;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    border-radius: 9px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.fixed-card:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    border-width: 3px;
-    
-}
-
-
-.fixed-img{
-
-    width: auto;
-    height: 100px;
-    max-width: 80%;
-    object-fit: contain;
-}
-
-.fixed-body{
-
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-}
-
 .fixed-card {
-    width: 100%;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    border-radius: 9px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .fixed-card:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Efecto de brillo según el tipo */
-  .fire:hover {
-    box-shadow: 0 0 15px 4px #f08030;
-  }
-  
-  .water:hover {
-    box-shadow: 0 0 15px 4px #6890f0;
-  }
-  
-  .grass:hover {
-    box-shadow: 0 0 15px 4px #78c850;
-  }
-  
-  .electric:hover {
-    box-shadow: 0 0 15px 4px #f8d030;
-  }
-  
-  .psychic:hover {
-    box-shadow: 0 0 15px 4px #f85888;
-  }
-  
-  .rock:hover {
-    box-shadow: 0 0 15px 4px #b8a038;
-  }
-  
-  .poison:hover {
-    box-shadow: 0 0 15px 4px #a040a0;
-  }
-  
-  .bug:hover {
-    box-shadow: 0 0 15px 4px #a8b820;
-  }
-  
-  .flying:hover {
-    box-shadow: 0 0 15px 4px #a890f0;
-  }
-  
-  .dragon:hover {
-    box-shadow: 0 0 15px 4px #7038f8;
-  }
-  
-  .fairy:hover {
-    box-shadow: 0 0 15px 4px #ee99ac;
-  }
-  
-  .fighting:hover {
-    box-shadow: 0 0 15px 4px #c03028;
-  }
-  
-  .normal:hover {
-    box-shadow: 0 0 15px 4px #a8a878;
-  }
-  
-  .unknown:hover {
-    box-shadow: 0 0 15px 4px #888;
-  }
-  
-  /* Estilo por defecto si no hay un tipo asignado */
-  .fire {
-    background-color: #fddfdf;
-  }
-  
-  .water {
-    background-color: #def3fd;
-  }
-  
-  .grass {
-    background-color: #defde0;
-  }
-  
-  .electric {
-    background-color: #fcf7de;
-  }
-  
-  .psychic {
-    background-color: #eaeda1;
-  }
-  
-  .rock {
-    background-color: #f4e7da;
-  }
-  
-  .poison {
-    background-color: #98d7a5;
-  }
-  
-  .bug {
-    background-color: #f8d5a3;
-  }
-  
-  .flying {
-    background-color: #f5f5f5;
-  }
-  
-  .dragon {
-    background-color: #97b3e6;
-  }
-  
-  .fairy {
-    background-color: #fceaff;
-  }
-  
-  .fighting {
-    background-color: #e6e0d4;
-  }
-  
-  .normal {
-    background-color: #f5f5f5;
-  }
-  
-  .unknown {
-    background-color: #e0e0e0; /* Color gris neutro si no tiene tipo */
-  }
-  
+  width: 100%;
+  height: 250px; /* Aumentado */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: visible;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fixed-img {
+  width: auto;
+  height: 100px; /* Aumentado */
+  max-width: 90%;
+  object-fit: contain;
+}
+
+.fixed-card:hover .fixed-img {
+  transform: scale(1.15); /* Zoom suave */
+}
+
+.fixed-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 12px;
+}
+
+/* ---------- FONDOS ANIMADOS POR TIPO ---------- */
+.fire {
+  background: linear-gradient(-45deg, #fddfdf, #f08030, #fddfdf);
+  background-size: 400% 400%;
+  animation: animateFire 6s ease infinite;
+  color: black;
+}
+
+.water {
+  background: linear-gradient(-45deg, #def3fd, #6890f0, #def3fd);
+  background-size: 400% 400%;
+  animation: animateWater 6s ease infinite;
+  color: black;
+}
+
+.grass {
+  background: linear-gradient(-45deg, #defde0, #78c850, #defde0);
+  background-size: 400% 400%;
+  animation: animateGrass 6s ease infinite;
+  color: black;
+}
+
+.electric {
+  background: linear-gradient(-45deg, #fcf7de, #f8d030, #fcf7de);
+  background-size: 400% 400%;
+  animation: animateElectric 6s ease infinite;
+  color: black;
+}
+
+.psychic {
+  background: linear-gradient(-45deg, #fceaff, #f85888, #fceaff);
+  background-size: 400% 400%;
+  animation: animatePsychic 6s ease infinite;
+  color: black;
+}
+
+.rock {
+  background: linear-gradient(-45deg, #f4e7da, #b8a038, #f4e7da);
+  background-size: 400% 400%;
+  animation: animateRock 6s ease infinite;
+  color: black;
+}
+
+.poison {
+  background: linear-gradient(-45deg, #98d7a5, #a040a0, #98d7a5);
+  background-size: 400% 400%;
+  animation: animatePoison 6s ease infinite;
+  color: black;
+}
+
+.bug {
+  background: linear-gradient(-45deg, #f8d5a3, #a8b820, #f8d5a3);
+  background-size: 400% 400%;
+  animation: animateBug 6s ease infinite;
+  color: black;
+}
+
+.flying {
+  background: linear-gradient(-45deg, #f5f5f5, #a890f0, #f5f5f5);
+  background-size: 400% 400%;
+  animation: animateFlying 6s ease infinite;
+  color: black;
+}
+
+.dragon {
+  background: linear-gradient(-45deg, #97b3e6, #7038f8, #97b3e6);
+  background-size: 400% 400%;
+  animation: animateDragon 6s ease infinite;
+  color: white;
+}
+
+.fairy {
+  background: linear-gradient(-45deg, #fceaff, #ee99ac, #fceaff);
+  background-size: 400% 400%;
+  animation: animateFairy 6s ease infinite;
+  color: black;
+}
+
+.fighting {
+  background: linear-gradient(-45deg, #e6e0d4, #c03028, #e6e0d4);
+  background-size: 400% 400%;
+  animation: animateFighting 6s ease infinite;
+  color: black;
+}
+
+.normal {
+  background: linear-gradient(-45deg, #f5f5f5, #a8a878, #f5f5f5);
+  background-size: 400% 400%;
+  animation: animateNormal 6s ease infinite;
+  color: black;
+}
+
+.unknown {
+  background: linear-gradient(-45deg, #cfd8dc, #888888, #cfd8dc);
+  background-size: 400% 400%;
+  animation: animateUnknown 6s ease infinite;
+  color: white;
+}
+
+/* ---------- EFECTO HOVER ILUMINADO ---------- */
+.fixed-card:hover {
+  transform: scale(1.05);
+}
+
+.fire:hover { box-shadow: 0 0 20px 6px #f08030aa; }
+.water:hover { box-shadow: 0 0 20px 6px #6890f0aa; }
+.grass:hover { box-shadow: 0 0 20px 6px #78c850aa; }
+.electric:hover { box-shadow: 0 0 20px 6px #f8d030aa; }
+.psychic:hover { box-shadow: 0 0 20px 6px #f85888aa; }
+.rock:hover { box-shadow: 0 0 20px 6px #b8a038aa; }
+.poison:hover { box-shadow: 0 0 20px 6px #a040a0aa; }
+.bug:hover { box-shadow: 0 0 20px 6px #a8b820aa; }
+.flying:hover { box-shadow: 0 0 20px 6px #a890f0aa; }
+.dragon:hover { box-shadow: 0 0 20px 6px #7038f8aa; }
+.fairy:hover { box-shadow: 0 0 20px 6px #ee99acaa; }
+.fighting:hover { box-shadow: 0 0 20px 6px #c03028aa; }
+.normal:hover { box-shadow: 0 0 20px 6px #a8a878aa; }
+.unknown:hover { box-shadow: 0 0 20px 6px #888888aa; }
+
+/* ---------- ANIMACIONES DE GRADIENTE ---------- */
+@keyframes animateFire {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes animateWater {
+  0% { background-position: 100% 50%; }
+  50% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes animateGrass {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+@keyframes animateElectric {
+  0% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 50% 0%; }
+}
+
+/* Reutilizar animaciones básicas para otros tipos */
+@keyframes animatePsychic { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+@keyframes animateRock { 0%, 100% { background-position: 100% 50%; } 50% { background-position: 0% 50%; } }
+@keyframes animatePoison { 0%, 100% { background-position: 0% 0%; } 50% { background-position: 100% 100%; } }
+@keyframes animateBug { 0%, 100% { background-position: 50% 0%; } 50% { background-position: 50% 100%; } }
+@keyframes animateFlying { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+@keyframes animateDragon { 0%, 100% { background-position: 100% 50%; } 50% { background-position: 0% 50%; } }
+@keyframes animateFairy { 0%, 100% { background-position: 0% 0%; } 50% { background-position: 100% 100%; } }
+@keyframes animateFighting { 0%, 100% { background-position: 50% 0%; } 50% { background-position: 50% 100%; } }
+@keyframes animateNormal { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+@keyframes animateUnknown { 0%, 100% { background-position: 50% 0%; } 50% { background-position: 50% 100%; } }
+
